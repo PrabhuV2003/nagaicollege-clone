@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000080;
+  --color-sec: #0049d0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden !important;
+}
+
+.cross {
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+
+.textMoving {
+  animation: moving 7s infinite linear;
+}
+
+@media (max-width: 768px) {
+  .cross {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(-100%);
+  } to {
+    transform: translateX(100%);
+  }
+}
+
