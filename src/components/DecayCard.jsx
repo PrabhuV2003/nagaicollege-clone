@@ -4,14 +4,20 @@ import { gsap } from "gsap";
 const DecayCard = ({
   width = 500,
   height = 500,
-  image = 'https://picsum.photos/300/400?grayscale',
+  image = "https://picsum.photos/300/400?grayscale",
   children,
 }) => {
   const svgRef = useRef(null);
   const displacementMapRef = useRef(null);
-  const cursor = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+  const cursor = useRef({
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  });
   const cachedCursor = useRef({ ...cursor.current });
-  const winsize = useRef({ width: window.innerWidth, height: window.innerHeight });
+  const winsize = useRef({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   useEffect(() => {
     const lerp = (a, b, n) => (1 - n) * a + n * b;
@@ -19,7 +25,10 @@ const DecayCard = ({
     const distance = (x1, x2, y1, y2) => Math.hypot(x1 - x2, y1 - y2);
 
     const handleResize = () => {
-      winsize.current = { width: window.innerWidth, height: window.innerHeight };
+      winsize.current = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
     };
 
     const handleMouseMove = (ev) => {
@@ -82,7 +91,9 @@ const DecayCard = ({
       );
 
       if (displacementMapRef.current) {
-        gsap.set(displacementMapRef.current, { attr: { scale: imgValues.displacementScale } });
+        gsap.set(displacementMapRef.current, {
+          attr: { scale: imgValues.displacementScale },
+        });
       }
 
       cachedCursor.current = { ...cursor.current };

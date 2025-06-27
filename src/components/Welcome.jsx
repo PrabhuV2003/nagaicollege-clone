@@ -20,8 +20,10 @@ const Welcome = () => {
           </DecayCard>
         </div>
         <div className=" w-full ">
-
-          <SectionTitle text1={'WELCOME TO'} text2={'Nagai College of Education'}/>
+          <SectionTitle
+            text1={"WELCOME TO"}
+            text2={"Nagai College of Education"}
+          />
 
           <p className=" text-xl leading-9 mb-5 text-justify ">
             Established in 2006, Nagai College of Education is a premier
